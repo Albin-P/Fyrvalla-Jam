@@ -8,6 +8,8 @@ public class controller : MonoBehaviour
 
     public Rigidbody2D rb;
 
+    
+
     Vector2 movement;
     // Update is called once per frame
     void Update()
@@ -15,12 +17,14 @@ public class controller : MonoBehaviour
         // input
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+
+        
     }
 
     private void FixedUpdate()
     {
         // movment
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
-        transform.Rotate(0f, 180f, 0f);
+        
     }
 }
