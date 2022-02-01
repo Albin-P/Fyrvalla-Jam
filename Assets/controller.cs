@@ -21,5 +21,6 @@ public class controller : MonoBehaviour
     {
         // movment
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        transform.Rotate(0f, 180f, 0f);
     }
 }
