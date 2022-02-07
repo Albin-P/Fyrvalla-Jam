@@ -11,7 +11,7 @@ public class FinishLine : MonoBehaviour
         {
 
             Debug.Log("Finish");
-           // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+           SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 }

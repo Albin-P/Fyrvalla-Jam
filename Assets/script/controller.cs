@@ -24,7 +24,7 @@ public class controller : MonoBehaviour
     private void FixedUpdate()
     {
         // movment
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        rb.MovePosition(rb.position + movement.normalized * moveSpeed * Time.fixedDeltaTime);
         
     }
 }
