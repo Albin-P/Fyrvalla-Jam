@@ -1,12 +1,10 @@
-Fyrvalla Jam
-•	Point and click
-•	Minimum: 5 minuter spel 
-•	Loot-inventory 
-•	Riktiga Bilder på fyrvalla
-•	Uppgraderingar: förbättringar av startföremål.
-•	(Speedboostföremål)
-•	Mål: fly från Fyrvalla (få bort piraterna från huvudentrén) (textbox som säger att piraterna är sugna på fika (idé på hur man får bort dem))
-•	Hotbar med målet.
-•	Dating sim samtal mellan karaktärer. 
-•	Kopiator = karta 
-•	Kahoot lalala remix secret i mörk rum
+# Fyrvalla Jam
+topdown zelda-aktigt rpg
+4 öar
+mål: ta sig till bryggan
+båtshoppen: mellan öarna för permanenta uppgraderingar samt bytta föremål.
+Story: det finns en skatt på sista ön och man behöver hitta nycklarna på de andra öarna för att öppna porten till skatten(pussel och boss per ö)
+attackspeed-boost flaska i shoppen 
+olika bossar
+svärd, bilbåge, armborste, släga, itemslot   (skilltre-aktigt uppgraderingssystem)
+öarna har olika typer fiender, ena har många låg hp fiender andra har få hög hp fiender 
