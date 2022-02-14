@@ -18,7 +18,10 @@ public class controller : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        
+        Vector2 playerPosition = transform.position;
+        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 direction = mousePosition - playerPosition;
+        transform.up = direction;
     }
 
     private void FixedUpdate()
