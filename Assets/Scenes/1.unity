@@ -123,24 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &24778753 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5635382566926720149, guid: 0030a618b7c4e634680b9e2ab2ea108b, type: 3}
-  m_PrefabInstance: {fileID: 3434855010709394241}
-  m_PrefabAsset: {fileID: 0}
---- !u!135 &24778754
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 24778753}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &24778756 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7528596070020053633, guid: 0030a618b7c4e634680b9e2ab2ea108b, type: 3}
@@ -181,6 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c1cb611ad4b19444a620a5c827ec93c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerObject: {fileID: 1517122421}
 --- !u!61 &118579857
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -576,6 +559,21 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3779317026228437529, guid: 18a26856b4d9466438aa51ca414fa92e, type: 3}
   m_PrefabInstance: {fileID: 5968261458425562921}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1517122427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1517122421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7aca8131a187124d9f8d255ab86bc9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 100
+  score: 0
+  damage: 0
 --- !u!1 &1703575155
 GameObject:
   m_ObjectHideFlags: 0
@@ -916,18 +914,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 991465062}
     m_Modifications:
-    - target: {fileID: 2565702820731349453, guid: 0030a618b7c4e634680b9e2ab2ea108b, type: 3}
-      propertyPath: m_Color.b
-      value: 0.3962264
-      objectReference: {fileID: 0}
-    - target: {fileID: 2565702820731349453, guid: 0030a618b7c4e634680b9e2ab2ea108b, type: 3}
-      propertyPath: m_Color.g
-      value: 0.3962264
-      objectReference: {fileID: 0}
-    - target: {fileID: 2565702820731349453, guid: 0030a618b7c4e634680b9e2ab2ea108b, type: 3}
-      propertyPath: m_Color.r
-      value: 0.3962264
-      objectReference: {fileID: 0}
     - target: {fileID: 5635382566926720149, guid: 0030a618b7c4e634680b9e2ab2ea108b, type: 3}
       propertyPath: m_Name
       value: HexagonTerrain
@@ -986,12 +972,8 @@ PrefabInstance:
     m_TransformParent: {fileID: 1192220409}
     m_Modifications:
     - target: {fileID: 1475931935, guid: e608e591947d769429bc7537bb0de93b, type: 3}
-      propertyPath: m_Mass
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 1475931935, guid: e608e591947d769429bc7537bb0de93b, type: 3}
-      propertyPath: m_GravityScale
-      value: 0
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1475931937, guid: e608e591947d769429bc7537bb0de93b, type: 3}
       propertyPath: player
@@ -1054,6 +1036,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2969143503952770390, guid: 18a26856b4d9466438aa51ca414fa92e, type: 3}
+      propertyPath: Health
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 483182169, guid: 18a26856b4d9466438aa51ca414fa92e, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1337471463, guid: 18a26856b4d9466438aa51ca414fa92e, type: 3}
+      propertyPath: damage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1337471463, guid: 18a26856b4d9466438aa51ca414fa92e, type: 3}
+      propertyPath: attackRange
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591066127, guid: 18a26856b4d9466438aa51ca414fa92e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.218
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943615103, guid: 18a26856b4d9466438aa51ca414fa92e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.241
+      objectReference: {fileID: 0}
+    - target: {fileID: 166427444542801248, guid: 18a26856b4d9466438aa51ca414fa92e, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3779317026228437529, guid: 18a26856b4d9466438aa51ca414fa92e, type: 3}
       propertyPath: m_Name
       value: Player

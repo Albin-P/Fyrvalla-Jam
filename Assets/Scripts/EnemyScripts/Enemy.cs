@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
 
 
     public int health;
-    public float speed;
+    
 
 
     // Start is called before the first frame update

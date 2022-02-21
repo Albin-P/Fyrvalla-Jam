@@ -13,6 +13,13 @@ public class AttackScript : MonoBehaviour
     public LayerMask whatIsEnemies;
     public int damage;
 
+    public Player player;
+
+    private void Start()
+    {
+        player = GetComponent<controller>().player;
+        damage = player.damage;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -25,6 +32,7 @@ public class AttackScript : MonoBehaviour
                 {
                     enemiesToDamage[i].GetComponent<Enemy>().takeDamage(damage);
                 }
+
             }
             timeBtwAttack = startTimeBtwAttack;
         } else
