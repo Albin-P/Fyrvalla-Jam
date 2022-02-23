@@ -39,5 +39,6 @@ public class EnemyController : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         inRad = false;
+        Debug.Log("out of range");
     }
 }
