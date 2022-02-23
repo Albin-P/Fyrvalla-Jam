@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/BossRoom_1.unity
+    guid: 1dc9cf134e502124088d736aefc2cb7a
+  - enabled: 1
     path: Assets/Scenes/1.unity
     guid: 389404c89a9c5ac4aae57ea97132bc67
   - enabled: 1
