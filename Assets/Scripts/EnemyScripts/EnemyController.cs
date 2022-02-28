@@ -6,9 +6,10 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     private Rigidbody2D rb;
-    
-    [SerializeField] private GameObject player;
-    [SerializeField] private float speed = 1.5f;
+
+    public Transform player;
+    public float moveSpeed;
+    private Vector2 movement;
     bool inRad = false;
 
     // Start is called before the first frame update
@@ -20,25 +21,50 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
 
-        
+
     {
-        if(inRad == true)
+
+       
+            Vector3 direction = player.position - transform.position;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            rb.rotation = angle;
+
+            movement = direction.normalized;
+        
+
+    }
+
+    private void FixedUpdate()
+    {
+        if (inRad == true)
         {
-            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
-            
+            moveEnemy(movement);
         }
         
     }
-    
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    void moveEnemy(Vector2 direction)
     {
-        inRad = true;
-        Debug.Log("in range");
+        rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
     }
 
+    private void OnTriggerStay2D(Collider2D collission)
+    {
+
+        if (collission.tag == "Player")
+        {
+            inRad = true;
+        }
+    }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        inRad = false;
-        Debug.Log("out of range");
+        if (collision.tag == "Player")
+        {
+            inRad = false;
+        }
     }
+
+
+
+
 }
