@@ -7,13 +7,13 @@ public class Enemy : MonoBehaviour
 
 
     public int health;
-    public float speed;
+    [SerializeField] public int gold;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        gold = 50;
     }
 
     // Update is called once per frame

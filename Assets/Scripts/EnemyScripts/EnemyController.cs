@@ -6,6 +6,7 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     private Rigidbody2D rb;
+    
     [SerializeField] private GameObject player;
     [SerializeField] private float speed = 1.5f;
     bool inRad = false;
@@ -24,6 +25,7 @@ public class EnemyController : MonoBehaviour
         if(inRad == true)
         {
             transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+            
         }
         
     }
@@ -37,5 +39,6 @@ public class EnemyController : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         inRad = false;
+        Debug.Log("out of range");
     }
 }

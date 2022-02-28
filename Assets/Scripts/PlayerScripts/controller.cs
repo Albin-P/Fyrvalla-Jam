@@ -5,10 +5,16 @@ using UnityEngine;
 public class controller : MonoBehaviour
 {
     public float moveSpeed = 5f;
+    //public int Health;
+    public Player player;
 
     public Rigidbody2D rb;
 
-    
+    private void Start()
+    {
+        this.player = GetComponent<Player>();
+        this.rb = GetComponent<Rigidbody2D>();
+    }
 
     Vector2 movement;
     // Update is called once per frame
@@ -22,6 +28,12 @@ public class controller : MonoBehaviour
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 direction = mousePosition - playerPosition;
         transform.up = direction;
+
+        // health
+        if(player.hp <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void FixedUpdate()
@@ -30,4 +42,6 @@ public class controller : MonoBehaviour
         rb.MovePosition(rb.position + movement.normalized * moveSpeed * Time.fixedDeltaTime);
         
     }
+
+    
 }
