@@ -3313,10 +3313,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1192220409}
     m_Modifications:
-    - target: {fileID: 350266287, guid: e608e591947d769429bc7537bb0de93b, type: 3}
-      propertyPath: EnemyStartTimeBtwAttack
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 1475931937, guid: e608e591947d769429bc7537bb0de93b, type: 3}
       propertyPath: player
       value: 

@@ -4,16 +4,21 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public EnemySO enemyVar;
 
-
-    public int health;
+    private int health;
+    private int damage;
+    private Color color;
     [SerializeField] public int gold;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        gold = 50;
+        gold = enemyVar.gold;
+        damage = enemyVar.damage;
+        health = enemyVar.health;
+        color = enemyVar.color;
     }
 
     // Update is called once per frame
@@ -29,4 +34,15 @@ public class Enemy : MonoBehaviour
         health -= damage;
         Debug.Log("damage taken");
     }
+
+    public int getEnemyHealth()
+    {
+        return health;
+    }
+
+    public int getEnemyDamage()
+    {
+        return damage;
+    }
+
 }

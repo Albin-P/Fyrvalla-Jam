@@ -5,20 +5,17 @@ using UnityEngine;
 public class AttackPlayer : MonoBehaviour
 {
 
-    public int EnemyDamange;
+    
     private Collider2D c2D;
-
-    [SerializeField]private float EnemyTimeBtwAttack;
-    public float EnemyStartTimeBtwAttack;
-
-    private bool canAttack;
-
+    private Enemy enemy;
+    public float push;
+   
 
     // Start is called before the first frame update
     void Start()
     {
         c2D = this.GetComponent<BoxCollider2D>();
-        
+        enemy = GetComponent<Enemy>();
     }
 
     private void Update()
@@ -30,39 +27,33 @@ public class AttackPlayer : MonoBehaviour
     void Attack(Collision2D collision)
     {
 
-        if(EnemyTimeBtwAttack <= 0)
-        {
-            if (collision.collider.gameObject.tag == "Player")
-            {
-                Player player = collision.collider.gameObject.GetComponent<Player>();
-                if (canAttack == true)
-                {
-
-                    player.hp -= EnemyDamange;
-                    EnemyTimeBtwAttack = EnemyStartTimeBtwAttack;
-
-                }
-            }
+        
+        
+           
 
 
-        }
-        if (EnemyTimeBtwAttack > 0)
-        {
-            canAttack = false;
-        }
-        else
-        {
-            EnemyTimeBtwAttack -= Time.deltaTime;
-        }
+        
+        
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-            
-            
-            
+
+
+        if (collision.collider.gameObject.tag == "Player")
+        {
+            Player player = collision.collider.gameObject.GetComponent<Player>();
+
+
+            player.SetPlayerHp(player.GetPlayerHp() - enemy.enemyVar.damage);
+
+            Rigidbody2D rb = GetComponent<Rigidbody2D>();
 
             
+
+        }
+
+
     }
 
     private void OnCollisionExit2D(Collision2D collision)

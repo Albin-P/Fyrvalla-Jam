@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ece3384bc7d3ff549b28fb57b0f4e3f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  enemyVar: {fileID: 11400000, guid: 9d5a6e2ae1792f24a90124792a080c32, type: 2}
   gold: 0
 --- !u!114 &1475931937
 MonoBehaviour:
@@ -192,8 +192,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf363f8257eb41b4895ffed1cc5dfa7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyDamange: 20
-  EnemyStartTimeBtwAttack: 0.5
 --- !u!114 &1892242126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,3 +205,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 1475931932}
+  goldPrefab: {fileID: 2426173552919268219, guid: bf39c992c4c84924a9d4a89279f33ef6, type: 3}

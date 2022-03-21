@@ -5,6 +5,7 @@ using UnityEngine;
 public class GoldDrop : MonoBehaviour
 {
     public Enemy enemy;
+    public GameObject goldPrefab;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,9 +15,9 @@ public class GoldDrop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(enemy.health <= 0)
-        {
-
+       if(enemy.getEnemyHealth() <= 0)
+       {
+            Instantiate(goldPrefab, transform.position, transform.rotation);
         }
     }
 }

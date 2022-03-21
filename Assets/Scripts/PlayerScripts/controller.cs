@@ -30,7 +30,7 @@ public class controller : MonoBehaviour
         transform.up = direction;
 
         // health
-        if(player.hp <= 0)
+        if(player.GetPlayerHp() <= 0)
         {
             Destroy(gameObject);
         }
