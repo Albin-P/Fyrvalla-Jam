@@ -1,5 +1,9 @@
 # Fyrvalla Jam
 
+- Använder Unity version 2020.3.17f1
+
+- https://unity3d.com/get-unity/download/archive
+
 - Topdown zelda-aktigt rpg
 
 - 4 öar
