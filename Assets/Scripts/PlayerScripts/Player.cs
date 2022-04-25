@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
      public int hp;
 
     [SerializeField]
-    public int score = 0;
+    public int Playergold = 0;
 
     [SerializeField]
     public int damage = 0;
