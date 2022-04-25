@@ -7,8 +7,13 @@ public class AttackPlayer : MonoBehaviour
 
     public int EnemyDamange;
     private Collider2D c2D;
-    
-    
+
+    [SerializeField]private float EnemyTimeBtwAttack;
+    public float EnemyStartTimeBtwAttack;
+
+    private bool canAttack;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,20 +21,48 @@ public class AttackPlayer : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-       
+     
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    // Update is called once per frame
+    void Attack(Collision2D collision)
     {
-        if (collision.collider.gameObject.tag == "Player")
+
+        if(EnemyTimeBtwAttack <= 0)
         {
-            Player player = collision.collider.gameObject.GetComponent<Player>();
-            player.hp -= EnemyDamange; 
+            if (collision.collider.gameObject.tag == "Player")
+            {
+                Player player = collision.collider.gameObject.GetComponent<Player>();
+                if (canAttack == true)
+                {
+
+                    player.hp -= EnemyDamange;
+                    EnemyTimeBtwAttack = EnemyStartTimeBtwAttack;
+
+                }
+            }
+
+
         }
-        Debug.Log("hit");
+        if (EnemyTimeBtwAttack > 0)
+        {
+            canAttack = false;
+        }
+        else
+        {
+            EnemyTimeBtwAttack -= Time.deltaTime;
+        }
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+            
+            
+            
+
+            
     }
 
     private void OnCollisionExit2D(Collision2D collision)
