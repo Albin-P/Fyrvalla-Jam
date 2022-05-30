@@ -193,6 +193,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyDamange: 20
+  EnemyTimeBtwAttack: 0
   EnemyStartTimeBtwAttack: 0.5
 --- !u!114 &1892242126
 MonoBehaviour:
@@ -201,9 +202,10 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7020136191740478696}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7225422b652e5f84a958fbf4c4732683, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  goldDrop: {fileID: 0}
   enemy: {fileID: 1475931932}
